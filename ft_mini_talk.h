@@ -11,6 +11,5 @@ void ft_putchar(char c);
 int	ft_atoi(const char *str);
 void ft_putstr(char *str);
 void send_bin(int c, int pid);
-
 #endif
 

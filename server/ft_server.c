@@ -1,10 +1,19 @@
 #include "../ft_mini_talk.h"
 
-void handler(int sig)
+int g_pid = 0;
+
+static void handler(int sig, siginfo_t *info, void *context)
 {
 	static char	c;
 	static int	n;
 
+	(void) context;
+	if (g_pid != info->si_pid)
+	{
+		c = 0;
+		n = 0;
+		g_pid = info->si_pid;
+	}
 	n++;
 	c = c << 1 | (sig - SIGUSR1);
 	if (n == 8)
@@ -16,10 +25,15 @@ void handler(int sig)
 }
 int main()
 {
+	struct sigaction sa;
+
+	sa.sa_sigaction = &handler;
+	sa.sa_flags = SA_SIGINFO;
 	printf("%d\n", getpid()); //get PID ID
 
-	signal(SIGUSR1, &handler);
-	signal(SIGUSR2, &handler);
+
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
 	while (1);
 	return 0;
 }

@@ -10,10 +10,11 @@ void send_bin(int c, int pid)
 	while (i >= 0)
 	{
 		usleep(500);
-		x = c >> i-- & 1; //binary byte
+		x = c >> i-- & 1;
 		if (x == 0)
 			kill(pid, SIGUSR1);
 		else if (x == 1)
 			kill(pid, SIGUSR2);
 	}
 }
+
