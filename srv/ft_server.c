@@ -29,11 +29,10 @@ int main()
 
 	sa.sa_sigaction = &handler;
 	sa.sa_flags = SA_SIGINFO;
-	printf("%d\n", getpid()); //get PID ID
-
-
+	ft_putnbr(10, getpid(), "0123456789");
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
+	ft_putchar('\n');
 	while (1);
 	return 0;
 }

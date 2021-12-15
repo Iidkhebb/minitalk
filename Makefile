@@ -5,7 +5,8 @@ FLAGS = -Wall -Wextra -Werror
 INC = ft_mini_talk.h
 CLIENTFILES = clt/ft_client.c
 SERVERFILES = srv/ft_server.c
-TOOLSFILES =  mini_talk_utils/ft_atoi.c mini_talk_utils/ft_putstr.c mini_talk_utils/ft_putchar.c mini_talk_utils/ft_send_bin.c
+TOOLSFILES =  mini_talk_utils/ft_atoi.c mini_talk_utils/ft_putstr.c \
+mini_talk_utils/ft_putchar.c mini_talk_utils/ft_send_bin.c mini_talk_utils/ft_putnbr.c
 
 
 OCLIENTFILES = ${CLIENTFILES:.c=.o}

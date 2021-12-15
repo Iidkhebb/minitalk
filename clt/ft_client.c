@@ -6,9 +6,7 @@ int main(int ac, char const *av[])
 	int index;
 
 	if (ac != 3)
-	{
-		return(ft_putstr("error\n"), 1);
-	}
+		return(ft_putstr("ARGS ERROR\n"), 1);
 	else
 	{
 		index = 0;
