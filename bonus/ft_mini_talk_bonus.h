@@ -1,5 +1,5 @@
-#ifndef FT_MINI_TALK_H
-#define FT_MINI_TALK_H
+#ifndef FT_MINI_TALK_BONUS_H
+#define FT_MINI_TALK_BONUS_H
 
 #include <signal.h>
 #include <unistd.h>

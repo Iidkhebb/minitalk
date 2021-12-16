@@ -1,4 +1,4 @@
-#include "../ft_mini_talk.h"
+#include "../ft_mini_talk_bonus.h"
 
 int g_pid = 0;
 
