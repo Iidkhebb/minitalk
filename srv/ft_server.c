@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_server_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iidkhebb <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/16 03:16:44 by iidkhebb          #+#    #+#             */
+/*   Updated: 2021/12/16 03:24:19 by iidkhebb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_mini_talk.h"
 
-int g_pid = 0;
+int	g_pid = 0;
 
-static void handler(int sig, siginfo_t *info, void *context)
+static void	handler(int sig, siginfo_t *info, void *context)
 {
 	static char	c;
 	static int	n;
@@ -27,9 +39,10 @@ static void handler(int sig, siginfo_t *info, void *context)
 		c = 0;
 	}
 }
-int main()
+
+int	main(void)
 {
-	struct sigaction sa;
+	struct sigaction	sa;
 
 	sa.sa_sigaction = &handler;
 	sa.sa_flags = SA_SIGINFO;
@@ -38,6 +51,8 @@ int main()
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	ft_putchar('\n');
-	while (1);
-	return 0;
+	while (1)
+	{
+	}
+	return (0);
 }
